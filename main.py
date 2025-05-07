@@ -32,7 +32,7 @@ NUM_EPOCH = 20
 
 class CellSegmentationDataset(Dataset):
     def __init__(self, transforms=None):
-        self.root_dir = 'C:\\Users\\user\\Documents\\hw3-data-release\\train'
+        self.root_dir = 'hw3-data-release\\train'
         self.transforms = transforms
         self.samples = sorted(os.listdir(self.root_dir))
 
@@ -301,7 +301,7 @@ scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
 )
 scaler = torch.amp.GradScaler()
 
-root_dir = 'C:\\Users\\user\\Documents\\'
+root_dir = ''
 
 model.cuda()
 
@@ -329,7 +329,7 @@ for epoch in range(NUM_EPOCH):
 
 class CellSegmentationDataset_test(Dataset):
     def __init__(self, transforms=None):
-        self.root_dir = 'C:\\Users\\user\\Documents\\hw3-data-release\\'
+        self.root_dir = 'hw3-data-release\\'
         self.transforms = transforms
 
         with open(self.root_dir + 'test_image_name_to_ids.json', 'r') as f:
